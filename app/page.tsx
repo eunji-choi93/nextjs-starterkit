@@ -1,9 +1,15 @@
-import Link from 'next/link';
-import { ArrowRight, Zap, Palette, Code2, Shield } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Header } from '@/components/layout/header';
-import { Footer } from '@/components/layout/footer';
+import Link from "next/link";
+import { ArrowRight, Zap, Palette, Code2, Shield } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
 
 /**
  * 홈 페이지
@@ -23,19 +29,14 @@ export default function Home() {
               모던 웹 스타터킷
             </h1>
             <p className="mb-8 text-lg text-muted-foreground sm:text-xl">
-              Next.js 16, TypeScript, Tailwind CSS, shadcn/ui로 구성된
-              프로덕션 레벨의 웹 애플리케이션 스타터킷입니다.
+              Next.js 16, TypeScript, Tailwind CSS, shadcn/ui로 구성된 프로덕션
+              레벨의 웹 애플리케이션 스타터킷입니다.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-              <Button asChild size="lg">
+              <Button asChild size="lg" className="h-14 px-8 text-lg">
                 <Link href="/dashboard">
                   시작하기
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link href="https://github.com" target="_blank">
-                  GitHub
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
             </div>

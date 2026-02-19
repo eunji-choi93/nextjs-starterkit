@@ -23,23 +23,31 @@ export default function Home() {
 
       <main className="flex-1">
         {/* 히어로 섹션 */}
-        <section className="container px-4 py-24 md:py-32">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-6xl">
-              모던 웹 스타터킷
-            </h1>
-            <p className="mb-8 text-lg text-muted-foreground sm:text-xl">
-              Next.js 16, TypeScript, Tailwind CSS, shadcn/ui로 구성된 프로덕션 레벨의
-              <br />
-              웹 애플리케이션 스타터킷입니다.
-            </p>
-            <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-              <Button asChild size="lg" className="h-14 px-8 text-lg">
-                <Link href="/dashboard">
-                  시작하기
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
+        <section className="relative overflow-hidden">
+          {/* 애니메이션 그라디언트 배경 */}
+          <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/10 via-background to-accent/10 animate-gradient" />
+
+          {/* 그리드 패턴 오버레이 */}
+          <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+
+          <div className="container px-4 py-24 md:py-32">
+            <div className="mx-auto max-w-3xl text-center">
+              <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-6xl animate-fade-in-up">
+                모던 웹 스타터킷
+              </h1>
+              <p className="mb-8 text-lg text-muted-foreground sm:text-xl animate-fade-in-up animation-delay-200">
+                Next.js 16, TypeScript, Tailwind CSS, shadcn/ui로 구성된 프로덕션 레벨의
+                <br />
+                웹 애플리케이션 스타터킷입니다.
+              </p>
+              <div className="flex flex-col gap-4 sm:flex-row sm:justify-center animate-fade-in-up animation-delay-400">
+                <Button asChild size="lg" className="h-14 px-8 text-lg">
+                  <Link href="/dashboard">
+                    시작하기
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
         </section>

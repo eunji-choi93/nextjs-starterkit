@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Zap, Palette, Code2, Shield } from "lucide-react";
+import { ArrowRight, Zap, Palette, Code2, Shield, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -30,7 +30,7 @@ export default function Home() {
           {/* 그리드 패턴 오버레이 */}
           <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
 
-          <div className="container px-4 py-24 md:py-32">
+          <div className="container mx-auto px-4 py-24 md:py-32">
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-6xl animate-fade-in-up">
                 모던 웹 스타터킷
@@ -53,7 +53,7 @@ export default function Home() {
         </section>
 
         {/* 기능 섹션 */}
-        <section className="container px-4 py-16">
+        <section className="container mx-auto px-4 py-16">
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold">주요 기능</h2>
             <p className="text-muted-foreground">
@@ -61,7 +61,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             <Card>
               <CardHeader>
                 <Zap className="mb-2 h-8 w-8 text-primary" />
@@ -78,6 +78,16 @@ export default function Home() {
                 <CardTitle>다크모드</CardTitle>
                 <CardDescription>
                   라이트/다크/시스템 테마를 지원하는 완벽한 다크모드
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <Smartphone className="mb-2 h-8 w-8 text-primary" />
+                <CardTitle>반응형 지원</CardTitle>
+                <CardDescription>
+                  모바일, 태블릿, 데스크톱 모든 기기에서 완벽하게 작동합니다
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -105,7 +115,7 @@ export default function Home() {
         </section>
 
         {/* 기술 스택 섹션 */}
-        <section className="container px-4 py-16">
+        <section className="container mx-auto px-4 py-16">
           <Card className="mx-auto max-w-3xl">
             <CardHeader>
               <CardTitle className="text-center text-2xl">기술 스택</CardTitle>

@@ -1,7 +1,7 @@
-import { Github, Twitter, Linkedin } from 'lucide-react';
-import Link from 'next/link';
-import { cn } from '@/lib/utils';
-import { Separator } from '@/components/ui/separator';
+import { Github, Twitter, Linkedin } from "lucide-react";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { Separator } from "@/components/ui/separator";
 
 /**
  * 푸터 컴포넌트 props
@@ -20,10 +20,8 @@ interface FooterProps {
  */
 export function Footer({ className }: FooterProps) {
   return (
-    <footer className={cn('border-t bg-background', className)}>
-      <div className="container px-4 py-8">
-        <Separator className="mb-8" />
-
+    <footer className={cn("border-t bg-background", className)}>
+      <div className="container mx-auto px-4 py-8">
         {/* 3단 그리드 레이아웃 */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {/* 회사 정보 */}
@@ -35,8 +33,8 @@ export function Footer({ className }: FooterProps) {
               <span className="font-bold">모던 웹 스타터킷</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              Next.js 16 기반의 모던 웹 애플리케이션 스타터킷입니다.
-              빠르게 프로덕션 레벨의 웹 앱을 개발하세요.
+              Next.js 16 기반의 모던 웹 애플리케이션 스타터킷입니다. 빠르게
+              프로덕션 레벨의 웹 앱을 개발하세요.
             </p>
           </div>
 
@@ -111,7 +109,10 @@ export function Footer({ className }: FooterProps) {
         {/* 저작권 정보 */}
         <Separator className="my-8" />
         <div className="text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} 모던 웹 스타터킷. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} 모던 웹 스타터킷. All rights
+            reserved.
+          </p>
         </div>
       </div>
     </footer>

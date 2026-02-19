@@ -29,8 +29,9 @@ export default function Home() {
               모던 웹 스타터킷
             </h1>
             <p className="mb-8 text-lg text-muted-foreground sm:text-xl">
-              Next.js 16, TypeScript, Tailwind CSS, shadcn/ui로 구성된 프로덕션
-              레벨의 웹 애플리케이션 스타터킷입니다.
+              Next.js 16, TypeScript, Tailwind CSS, shadcn/ui로 구성된 프로덕션 레벨의
+              <br />
+              웹 애플리케이션 스타터킷입니다.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
               <Button asChild size="lg" className="h-14 px-8 text-lg">

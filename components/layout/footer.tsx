@@ -54,7 +54,7 @@ export function Footer({ className }: FooterProps) {
               </li>
               <li>
                 <Link
-                  href="/settings"
+                  href="/dashboard/settings"
                   className="hover:text-foreground transition-colors"
                 >
                   설정

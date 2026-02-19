@@ -33,7 +33,7 @@ export default function DashboardLayout({
     },
     {
       title: '설정',
-      href: '/settings',
+      href: '/dashboard/settings',
       icon: Settings,
     },
   ];

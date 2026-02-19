@@ -166,4 +166,13 @@
   .animation-delay-400 {
     animation-delay: 0.4s;
   }
+
+  /* 기술 아이콘 다크모드 최적화 */
+  .tech-icon {
+    transition: opacity 0.2s;
+  }
+
+  .dark .tech-icon {
+    filter: brightness(1.1) contrast(0.95);
+  }
 }

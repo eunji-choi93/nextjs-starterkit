@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Zap, Palette, Code2, Shield, Smartphone } from "lucide-react";
+import { ArrowRight, Zap, Palette, Code2, Shield, Smartphone, Feather } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -10,6 +10,13 @@ import {
 } from "@/components/ui/card";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import {
+  siNextdotjs,
+  siReact,
+  siTypescript,
+  siTailwindcss,
+} from 'simple-icons';
+import { TechIcon } from '@/components/ui/tech-icon';
 
 /**
  * 홈 페이지
@@ -124,22 +131,48 @@ export default function Home() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-lg border p-4">
-                  <h3 className="mb-2 font-semibold">프레임워크</h3>
-                  <ul className="space-y-1 text-sm text-muted-foreground">
-                    <li>• Next.js 16 (App Router)</li>
-                    <li>• React 19</li>
-                    <li>• TypeScript</li>
-                  </ul>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="flex items-center gap-3 rounded-lg border p-4">
+                  <TechIcon icon={siNextdotjs} className="h-8 w-8" />
+                  <div>
+                    <p className="font-semibold">Next.js 16</p>
+                    <p className="text-xs text-muted-foreground">App Router</p>
+                  </div>
                 </div>
-                <div className="rounded-lg border p-4">
-                  <h3 className="mb-2 font-semibold">스타일링</h3>
-                  <ul className="space-y-1 text-sm text-muted-foreground">
-                    <li>• Tailwind CSS</li>
-                    <li>• shadcn/ui</li>
-                    <li>• Lucide Icons</li>
-                  </ul>
+                <div className="flex items-center gap-3 rounded-lg border p-4">
+                  <TechIcon icon={siReact} className="h-8 w-8" />
+                  <div>
+                    <p className="font-semibold">React 19</p>
+                    <p className="text-xs text-muted-foreground">최신 버전</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 rounded-lg border p-4">
+                  <TechIcon icon={siTypescript} className="h-8 w-8" />
+                  <div>
+                    <p className="font-semibold">TypeScript</p>
+                    <p className="text-xs text-muted-foreground">타입 안정성</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 rounded-lg border p-4">
+                  <TechIcon icon={siTailwindcss} className="h-8 w-8" />
+                  <div>
+                    <p className="font-semibold">Tailwind CSS</p>
+                    <p className="text-xs text-muted-foreground">유틸리티 우선</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 rounded-lg border p-4">
+                  <Palette className="h-8 w-8 text-primary" />
+                  <div>
+                    <p className="font-semibold">shadcn/ui</p>
+                    <p className="text-xs text-muted-foreground">UI 컴포넌트</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 rounded-lg border p-4">
+                  <Feather className="h-8 w-8 text-primary" />
+                  <div>
+                    <p className="font-semibold">Lucide Icons</p>
+                    <p className="text-xs text-muted-foreground">아이콘 라이브러리</p>
+                  </div>
                 </div>
               </div>
             </CardContent>

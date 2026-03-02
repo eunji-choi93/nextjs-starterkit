@@ -105,15 +105,6 @@ export function Footer({ className }: FooterProps) {
             </div>
           </div>
         </div>
-
-        {/* 저작권 정보 */}
-        <Separator className="my-8" />
-        <div className="text-center text-sm text-muted-foreground">
-          <p>
-            &copy; {new Date().getFullYear()} 모던 웹 스타터킷. All rights
-            reserved.
-          </p>
-        </div>
       </div>
     </footer>
   );

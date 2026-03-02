@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { User, Settings, LogOut } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
@@ -27,10 +28,13 @@ interface UserMenuProps {
  *
  * @description 아바타와 드롭다운 메뉴로 구성된 사용자 메뉴입니다.
  * 프로필, 설정, 로그아웃 메뉴를 제공합니다.
+ * SSR/CSR 간 Radix UI useId() 불일치 방지를 위해 마운트 후에만 DropdownMenu를 렌더링합니다.
  *
  * @param user - 사용자 정보 (이름, 이메일, 아바타)
  */
 export function UserMenu({ user }: UserMenuProps) {
+  const [mounted, setMounted] = useState(false);
+
   const defaultUser = {
     name: user?.name || '사용자',
     email: user?.email || 'user@example.com',
@@ -44,6 +48,19 @@ export function UserMenu({ user }: UserMenuProps) {
     .join('')
     .toUpperCase()
     .slice(0, 2);
+
+  // 하이드레이션 완료 후에만 인터랙티브 컴포넌트를 렌더링
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <Avatar>
+        <AvatarFallback>{initials}</AvatarFallback>
+      </Avatar>
+    );
+  }
 
   return (
     <DropdownMenu>

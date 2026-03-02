@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { Moon, Sun, Monitor } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
@@ -14,9 +15,24 @@ import {
  * 다크모드 토글 컴포넌트
  *
  * @description 라이트, 다크, 시스템 모드를 전환할 수 있는 드롭다운 버튼입니다.
+ * SSR/CSR 간 Radix UI useId() 불일치 방지를 위해 마운트 후에만 DropdownMenu를 렌더링합니다.
  */
 export function ThemeToggle() {
+  const [mounted, setMounted] = useState(false);
   const { setTheme } = useTheme();
+
+  // 하이드레이션 완료 후에만 인터랙티브 컴포넌트를 렌더링
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <Button variant="outline" size="icon" aria-label="테마 변경" disabled>
+        <Sun className="h-[1.2rem] w-[1.2rem]" />
+      </Button>
+    );
+  }
 
   return (
     <DropdownMenu>

@@ -1,21 +1,21 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { useState } from 'react';
-import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
-} from '@/components/ui/sheet';
-import { useMobile } from '@/hooks/useMobile';
-import { NavigationItem } from '@/types/navigation';
+} from "@/components/ui/sheet";
+import { useMobile } from "@/hooks/useMobile";
+import { NavigationItem } from "@/types/navigation";
 
 /**
  * 사이드바 컴포넌트 props
@@ -29,8 +29,6 @@ interface SidebarProps {
 /**
  * 사이드바 네비게이션 컴포넌트
  *
- * @description 접을 수 있는 측면 네비게이션입니다.
- * 모바일에서는 Sheet 컴포넌트로 변환됩니다.
  *
  * @param items - 네비게이션 아이템 배열
  * @param isOpen - 모바일 사이드바 열림 상태
@@ -52,14 +50,14 @@ export function Sidebar({ items, isOpen = false, onClose }: SidebarProps) {
         href={item.href}
         onClick={isMobile ? onClose : undefined}
         className={cn(
-          'flex items-center gap-3 rounded-lg px-3 py-2 transition-colors',
-          'hover:bg-accent hover:text-accent-foreground',
+          "flex items-center gap-3 rounded-lg px-3 py-2 transition-colors",
+          "hover:bg-accent hover:text-accent-foreground",
           isActive
-            ? 'bg-accent text-accent-foreground'
-            : 'text-muted-foreground',
-          collapsed && 'justify-center'
+            ? "bg-accent text-accent-foreground"
+            : "text-muted-foreground",
+          collapsed && "justify-center"
         )}
-        aria-current={isActive ? 'page' : undefined}
+        aria-current={isActive ? "page" : undefined}
       >
         <Icon className="h-5 w-5 flex-shrink-0" aria-hidden="true" />
         {!collapsed && (
@@ -96,8 +94,8 @@ export function Sidebar({ items, isOpen = false, onClose }: SidebarProps) {
   return (
     <aside
       className={cn(
-        'relative flex flex-col border-r bg-background transition-all duration-300',
-        isCollapsed ? 'w-16' : 'w-64'
+        "relative flex flex-col border-r bg-background transition-all duration-300",
+        isCollapsed ? "w-16" : "w-64"
       )}
     >
       {/* 네비게이션 영역 */}
@@ -117,7 +115,7 @@ export function Sidebar({ items, isOpen = false, onClose }: SidebarProps) {
           size="icon"
           onClick={() => setIsCollapsed(!isCollapsed)}
           className="w-full"
-          aria-label={isCollapsed ? '사이드바 펼치기' : '사이드바 접기'}
+          aria-label={isCollapsed ? "사이드바 펼치기" : "사이드바 접기"}
           aria-expanded={!isCollapsed}
         >
           {isCollapsed ? (

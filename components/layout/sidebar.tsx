@@ -30,7 +30,6 @@ interface SidebarProps {
  * 사이드바 네비게이션 컴포넌트
  *
  *
- * @param items - 네비게이션 아이템 배열
  * @param isOpen - 모바일 사이드바 열림 상태
  * @param onClose - 모바일 사이드바 닫기 핸들러
  */

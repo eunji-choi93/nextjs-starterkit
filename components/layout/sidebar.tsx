@@ -26,13 +26,6 @@ interface SidebarProps {
   onClose?: () => void;
 }
 
-/**
- * 사이드바 네비게이션 컴포넌트
- *
- *
- * @param isOpen - 모바일 사이드바 열림 상태
- * @param onClose - 모바일 사이드바 닫기 핸들러
- */
 export function Sidebar({ items, isOpen = false, onClose }: SidebarProps) {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const isMobile = useMobile();

@@ -16,10 +16,6 @@ import {
 } from "@/components/ui/sheet";
 import { useMobile } from "@/hooks/useMobile";
 import { NavigationItem } from "@/types/navigation";
-
-/**
- * 사이드바 컴포넌트 props
- */
 interface SidebarProps {
   items: NavigationItem[];
   isOpen?: boolean;

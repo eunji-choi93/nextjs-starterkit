@@ -27,7 +27,6 @@ export function Sidebar({ items, isOpen = false, onClose }: SidebarProps) {
   const isMobile = useMobile();
   const pathname = usePathname();
 
-  // 네비게이션 아이템 렌더링
   const renderNavItem = (item: NavigationItem, collapsed: boolean) => {
     const isActive = pathname === item.href;
     const Icon = item.icon;
